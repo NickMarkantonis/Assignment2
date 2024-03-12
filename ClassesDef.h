@@ -1,17 +1,8 @@
 #include "vec3.h"
+#include "ray.h"
 #include "std_lib_facilities.h"
 
 using namespace std;
-
-/* struct ray:
- * defines a ray in the 3D space 
- * @param coords: a vector in the 3D space that defines the dirrection of the ray 
- * @param point:  a point (ussualy the starting point) that defines one point from which the ray passes */
-struct ray {
-    vec3 coords;
-    vec3 point;
-};
-
 
 // Sphere
 class Sphere {
@@ -28,6 +19,21 @@ private:
     vec3 possition;
     vec3 color;
     float radius;
+};
+
+// Camera
+class Camera {
+public:
+    Camera(vec3 center, int width, int height);
+    vec3 GetPixelCenter(int x, int y);
+
+    int getHeight() const;
+    int getWidth() const;
+private:
+    vec3 center;
+    int width;
+    int height;
+    float aspectRatio;
 };
 
 /*-------------------------------------------------------------------------------------------------------------------------------
@@ -47,42 +53,75 @@ float Dist(const ray &Ray, const Sphere &sphere) {
     /* @param PS: vector that starts from one random point of the ray (the one saved)
      and ends in the center of the Sphere  
      * @param PS_times_v: cross product between PS and the coords of the vector*/
-    vec3 PS(sphere.posX() - Ray.point.x(), sphere.posY() - Ray.point.y(), sphere.posZ() - Ray.point.z());
-    vec3 PS_times_v = crossProduct(PS, Ray.coords);
+    vec3 PS(sphere.posX() - Ray.origin().x(), sphere.posY() - Ray.origin().y(), sphere.posZ() - Ray.origin().z());
+    vec3 PS_times_v = crossProduct(PS, Ray.direction());
 
-    return (float) (PS_times_v.length() / Ray.coords.length());
+
+    return (float) (PS_times_v.length() / Ray.direction().length());
 }
 
-// Spheres
+/* Defining the sphere */
 Sphere::Sphere(vec3 _possition, vec3 _color, float _radius) {
     possition = _possition;
     color = _color;
     radius = _radius;
 }
 
+/* Calculates whether a ray hits a sphere */
 bool Sphere::Hit(const ray &Ray, double &dist) const {
     // making sure the ray is even going somewhat the right dirrection (so that we dont show a cyrcle 
-    // even if it is exactly behinf the camera)
-    if (this->posX() - Ray.coords.x() < 0 || this->posY() - Ray.coords.y() < 0 || this->posZ() - Ray.coords.z() < 0) return 0;
+    // even if it is exactly behind the camera)   
+    // if (this->posX() - Ray.direction().x() < 0 || this->posY() - Ray.direction().y() < 0 || this->posZ() - Ray.direction().z() < 0) return 0;
 
     float distance = Dist(Ray, *this);
 
-    if (distance <= dist && distance < Radius()) return 1;
+    if (Dist(Ray, *this) <= Radius()) {
+        return 1;
+    }
     return 0;
 }
 
+/* Returning the center of the sphere in the x axis */
 float Sphere::posX() const {
     return (float) possition.x();
 }
 
+/* Returning the center of the sphere in the y axis */
 float Sphere::posY() const {
     return (float) possition.y();
 }
 
+/* Returning the center of the sphere in the z axis */
 float Sphere::posZ() const {
     return (float) possition.z();
 }
 
+/* Returns the radius of the sphere */
 float Sphere::Radius() const {
     return (float) radius;
+}
+
+// Camera
+/* defining the camera*/
+Camera::Camera(vec3 _center, int _width, int _height) {
+    center = _center;
+    width = _width;
+    height = _height;
+    aspectRatio = (float) height/width;
+}
+
+/* returns a direction vector that is qdequate to the one leaving from the camera  */
+vec3 Camera::GetPixelCenter(int x, int y) {
+    float X = 1 - (float) 2 * x / width;
+    float Y = aspectRatio - (float) 2 * y / width;
+
+    return vec3(-1,X,Y);
+}
+
+int Camera::getHeight() const {
+    return height;
+}
+
+int Camera::getWidth() const {
+    return width;
 }
