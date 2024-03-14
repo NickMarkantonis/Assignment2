@@ -7,6 +7,8 @@
 #include "ray.h"
 #include "color.h"
 
+#pragma once
+
 using namespace std;
 
 class World {
@@ -46,7 +48,7 @@ void World::Render(Camera &cam) {
 
     // going throught all the pixels
     for (int i = 0; i < cam.getHeight(); i++) {
-        for (int j = 0; j < cam.getWidth(); j++) {
+        for (int j = cam.getWidth(); j > 0; j--) {
             // defining the default color as the sy color
             pixel_color = this->getSkyColor();
             // generating a ray based on the pixel
@@ -60,5 +62,5 @@ void World::Render(Camera &cam) {
             write_color(fout, pixel_color);
         }
     }
-
 }
+

@@ -1,14 +1,19 @@
 #include "vec3.h"
 #include "ray.h"
 
+#pragma once
+
+using namespace std;
+
 class Camera {
 public:
     Camera(vec3 center, int width, int height);
-    vec3 pixelCenter(int x, int y);
+    vec3 pixelCenter(int x, int y) const;
 
-    int getHeight() const {return height;}
-    int getWidth() const {return width;}
-    vec3 getPos() const {return center;}
+    int getHeight() const;
+    int getWidth() const;
+    float getAspectRatio() const;
+    vec3 getPos() const;
 private:
     vec3 center;
     int width;
@@ -24,10 +29,26 @@ Camera::Camera(vec3 _center, int _width, int _height) {
     aspectRatio = (float) height/width;
 }
 
+int Camera::getHeight() const {
+    return height;
+}
+
+int Camera::getWidth() const {
+    return width;
+}
+
+float Camera::getAspectRatio() const {
+    return aspectRatio;
+}
+
+vec3 Camera::getPos() const {
+    return center;
+}
+
 /* creating for each pixel a direction vector */
-vec3 Camera::pixelCenter(int x, int y) {
-    float X = 1 - (float) 2 * x / width;
-    float Y = aspectRatio - (float) 2 * y / width;
+vec3 Camera::pixelCenter(int y, int x) const {
+    float X = 1 - (float) 2 * x / getWidth();
+    float Y = getAspectRatio() - (float) 2 * y / getWidth();
 
     return vec3(-1,X,Y);
 }
