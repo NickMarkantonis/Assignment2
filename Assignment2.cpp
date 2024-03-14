@@ -8,14 +8,17 @@
 
 #include "functions.h"
 
+using namespace std;
+
 int main() {
     /**
      * @param userInp: the raw input from the user read as a string so that it can be checked for errors
      * @param inputLoc: if the input will come from the terminal (1) or from a file(2)
      * @param isFile: if the input is from a file, usefull for error checking
     */
-    int inputLoc, width, height, numSpheres;
-    string userInp, imName;
+    
+    int inputLoc, width, height, numSpheres, j, z;
+    string userInp, imName, inp[7];
     vec3 camPos, skyColour, sphereColor, spherePos;
     float sphereRadius;
     
@@ -25,6 +28,8 @@ int main() {
     inputLoc = readInt(userInp, 1, 2, false, true, true);
 
     if (inputLoc == 1) { // the input comes from the terminal
+
+
         cout << "Give image name (no need to add .ppm): ";
         cin >> imName;
 
@@ -98,7 +103,115 @@ int main() {
             world.Add(tmp);
         }
         world.Render(cam);
-    }
+    } else {
+        ifstream File;
+        string line;
 
-    
+        File.open("world.txt");
+
+        if (!File.is_open()) {
+            cout << "Error opening file!\n";
+            exit(1);
+        }
+
+        // getting the image name, on the first line of the file
+        getline(File, imName);
+
+        // getting camera possition
+        getline(File, userInp);
+        // breaking down the data
+        j = 0;
+        for (int i = 0; i < 3; i++) {
+            z = 0;
+            while (userInp[j] != ' ' && userInp[j] != '\0') {
+                inp[i] = inp[i] + userInp[j];
+                j++;
+                z++;
+            }
+            inp[i] + '\0';
+            camPos[i] = readFLoat(inp[i], 0, 0, true, false, false);
+            j++;
+        }
+        
+        // getting the image height and width
+        getline(File, userInp);
+        width = readInt(userInp, 0, 0, true, true, false);
+        
+        getline(File, userInp);
+        height = readInt(userInp, 0, 0, true, true, false);
+        
+        // defining the camera
+        Camera cam(camPos, width, height);
+
+        // getting sky colour
+        getline(File, userInp);
+        // breaking down the data
+        j = 0;
+        for (int i = 0; i < 3; i++) {
+            z = 0;
+            while (userInp[j] != ' ' && userInp[j] != '\0') {
+                inp[i] = inp[i] + userInp[j];
+                j++;
+                z++;
+            }
+            cout << "a\n";
+            inp[i] + '\0';
+            skyColour[i] = readFLoat(inp[i], 0, 1, true, true, true);
+            j++;
+        }
+
+
+        //defining the world
+        World world(skyColour);
+
+        // getting Shpere count
+        getline(File, userInp);
+        numSpheres = readInt(userInp, 0, 0, true, true, false);
+
+
+        for (int k = 0; k < numSpheres; k++) {
+            // getting Sphere data
+            getline(File, userInp);
+            // breaking down the data
+            j = 0;
+            for (int i = 0; i < 3; i++) {
+                z = 0;
+                while (userInp[j] != ' ' && userInp[j] != '\0') {
+                    inp[i] = inp[i] + userInp[j];
+                    j++;
+                    z++;
+                }
+                inp[i] + '\0';
+                sphereColor[i] = readFLoat(inp[i], 0, 1, true, false, true);
+                j++;
+            }
+
+            for (int i = 0; i < 3; i++) {
+                z = 0;
+                while (userInp[j] != ' ' && userInp[j] != '\0') {
+                    inp[i] = inp[i] + userInp[j];
+                    j++;
+                    z++;
+                }
+                inp[i] + '\0';
+                spherePos[i] = readFLoat(inp[i], 0, 0, true, false, false);
+                j++;
+            }
+
+            
+            z = 0;
+            while (userInp[j] != ' ' && userInp[j] != '\0') {
+                inp[0] = inp[0] + userInp[j];
+                j++;
+                z++;
+            }
+            inp[0] + '\0';
+            sphereRadius = readFLoat(inp[0], 0, 0, true, false, false);
+
+            Sphere tmp(spherePos, sphereColor, sphereRadius);
+            world.Add(tmp);
+        }
+        world.Render(cam);
+        File.close();
+    }   
 }
