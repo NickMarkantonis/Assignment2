@@ -29,7 +29,6 @@ int main() {
 
     if (inputLoc == 1) { // the input comes from the terminal
 
-
         cout << "Give image name (no need to add .ppm): ";
         cin >> imName;
 
@@ -102,7 +101,7 @@ int main() {
             Sphere tmp(spherePos, sphereColor, sphereRadius);
             world.Add(tmp);
         }
-        world.Render(cam);
+        world.Render(cam, imName);
     } else {
         ifstream File;
         string line;
@@ -149,12 +148,12 @@ int main() {
         j = 0;
         for (int i = 0; i < 3; i++) {
             z = 0;
+            inp[i] = "";
             while (userInp[j] != ' ' && userInp[j] != '\0') {
                 inp[i] = inp[i] + userInp[j];
                 j++;
                 z++;
             }
-            cout << "a\n";
             inp[i] + '\0';
             skyColour[i] = readFLoat(inp[i], 0, 1, true, true, true);
             j++;
@@ -176,6 +175,7 @@ int main() {
             j = 0;
             for (int i = 0; i < 3; i++) {
                 z = 0;
+                inp[i] = "";
                 while (userInp[j] != ' ' && userInp[j] != '\0') {
                     inp[i] = inp[i] + userInp[j];
                     j++;
@@ -188,6 +188,7 @@ int main() {
 
             for (int i = 0; i < 3; i++) {
                 z = 0;
+                inp[i] = "";
                 while (userInp[j] != ' ' && userInp[j] != '\0') {
                     inp[i] = inp[i] + userInp[j];
                     j++;
@@ -200,6 +201,7 @@ int main() {
 
             
             z = 0;
+            inp[0] = "";
             while (userInp[j] != ' ' && userInp[j] != '\0') {
                 inp[0] = inp[0] + userInp[j];
                 j++;
@@ -211,7 +213,7 @@ int main() {
             Sphere tmp(spherePos, sphereColor, sphereRadius);
             world.Add(tmp);
         }
-        world.Render(cam);
+        world.Render(cam, imName);
         File.close();
     }   
 }

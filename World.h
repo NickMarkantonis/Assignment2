@@ -12,7 +12,7 @@ public:
     World(vec3 skyColor);
 
     void Add(Sphere &sphere);
-    void Render(Camera &cam);
+    void Render(Camera &cam, const string &name);
 
     vec3 getSkyColor() const {return skyColor;}
     
