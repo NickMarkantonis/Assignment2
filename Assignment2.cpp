@@ -159,7 +159,6 @@ int main() {
             j++;
         }
 
-
         //defining the world
         World world(skyColour);
 
@@ -198,7 +197,6 @@ int main() {
                 spherePos[i] = readFLoat(inp[i], 0, 0, true, false, false);
                 j++;
             }
-
             
             z = 0;
             inp[0] = "";
