@@ -13,7 +13,7 @@ using namespace std;
 class Sphere {
 public:
     Sphere(vec3 possition, vec3 color, float radius);
-    bool Hit(ray &Ray, float *dist, bool *checDist) const;
+    bool Hit(ray &Ray, double *dist, bool *checDist) const;
 
     double getPosX() const {return possition.x();}
     double getPosY() const {return possition.y();}

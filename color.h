@@ -19,12 +19,14 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+#pragma once
+
 #include "vec3.h"
 #include <iostream>
 
 using color = vec3;
 
-void write_color(std::ostream &out, color pixel_color) 
+inline void write_color(std::ostream &out, color pixel_color) 
 {
    // Write the translated [0,255] value of each color component. 
    out  << static_cast<int>(255.999 * pixel_color.x()) << ' '
@@ -33,36 +35,5 @@ void write_color(std::ostream &out, color pixel_color)
   
 }
 
-double clamp(double x)
-{
-    if (x < 0.000) return 0.000;
-    if (x > 0.999) return 0.999;
-    return x;
-}
-
-/**
- * Writes the color of a pixel to the output stream.
- * 
- * @param out The output stream to write the color to.
- * @param pixel_color The color of the pixel.
- * @param samples_per_pixel The number of samples per pixel.
- */
-void write_color(std::ostream &out, color pixel_color, int samples_per_pixel) 
-{
-    auto r = pixel_color.x();
-    auto g = pixel_color.y();
-    auto b = pixel_color.z();
-
-    // Divide the color by the number of samples.
-    auto scale = 1.0 / samples_per_pixel;
-    r *= scale;
-    g *= scale;
-    b *= scale;
-
-    // Write the translated [0,255] value of each color component.
-    out << static_cast<int>(256 * clamp(r)) << ' '
-        << static_cast<int>(256 * clamp(g)) << ' '
-        << static_cast<int>(256 * clamp(b)) << '\n';
-}
 
 #endif

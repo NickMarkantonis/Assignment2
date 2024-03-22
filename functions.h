@@ -14,7 +14,7 @@ class notInt {};
 class notFloat {};
 class wrongInput {};
 
-// checks if a string is a int
+// checks if string is a int, got code from: https://stackoverflow.com/a/16575025
 bool isInt(string inp) {
     char *p;
     strtol(inp.c_str(), &p, 10);
@@ -26,8 +26,7 @@ bool isInt(string inp) {
  * if the input is comming from a file the program closes as it cannot re read the input 
  * 
  * @param isFile: in case it's true, whenever wrong input is given the program stops
- * 
- * @param checkInpMin: whether to make sure the number is smaller then the min
+ * @param checkInpMin: whether to make sure the number is greater then the min
  * @param checkInpMax: whether to make sure the number is smaller then the max
  */
 int readInt(string inp, int min, int max, bool isFile, bool checkInpMin, bool checkInpMax) {
@@ -48,6 +47,7 @@ int readInt(string inp, int min, int max, bool isFile, bool checkInpMin, bool ch
 
             correctInp = true;
         }
+        // if the string is not a int
         catch (notInt&b) {
             if (isFile) exit(1);
             cout << "input must be integer";
@@ -55,6 +55,7 @@ int readInt(string inp, int min, int max, bool isFile, bool checkInpMin, bool ch
             cout << ", please enter again:  ";
             cin >> inp;
         }
+        // if the string is not within the set limits
         catch (wrongInput&b) {
             cout << "input must be";
             if (checkInpMax && checkInpMin) cout << "between " << min << " and " << max;
@@ -68,7 +69,7 @@ int readInt(string inp, int min, int max, bool isFile, bool checkInpMin, bool ch
     return num;
 }
 
-// checks if string is float
+// checks if string is float, got code from: https://stackoverflow.com/a/447307
 bool isFloat(string inp, float *f) {
     bool isfloat;
     istringstream iss(inp);
@@ -91,6 +92,7 @@ float readFLoat(string inp, float min, float max, bool isFile, bool checkInpMin,
 
             correctInp = true;
         }
+        // if the string is not a float
         catch (notFloat&b) {
             if (isFile) exit(1);
             cout << "input must be float";
@@ -98,6 +100,7 @@ float readFLoat(string inp, float min, float max, bool isFile, bool checkInpMin,
             cout << ", please enter again:  ";
             cin >> inp;
         }
+        // if the float is not whithin the set limits
         catch (wrongInput&b) {
             cout << "input must be";
             if (checkInpMax && checkInpMin) cout << "between " << min << " and " << max;
@@ -110,4 +113,3 @@ float readFLoat(string inp, float min, float max, bool isFile, bool checkInpMin,
     }
     return num;
 }
-

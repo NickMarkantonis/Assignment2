@@ -9,20 +9,27 @@
 
 using namespace std;
 
-/* Defining the World */
+// Defining the World
 World::World(vec3 _skyColor) {
     skyColor = _skyColor;
 }
 
-/* Adds the Sphere given to the vector */
+// Adding a sphere to the world vector
 void World::Add(Sphere &sphere) {
-    Spheres.insert(Spheres.end(), sphere);
+    Spheres.push_back(sphere);
 }
 
-// renders the phto from the camera given
+// renders the photo from the camera given
 void World::Render(Camera &cam, const string &name) {
+    /** variable meaning:
+     * @param pixel_color: the color the pixel will have, is used with the function write_color
+     * @param dist: the shortest hit ditance yet for each pixel, gets reset in wvery loop
+     * @param total: the total amount of pixels divided by 100, will be used to print the progres of the generation
+     * @param k,z: two temp variables that are used in the progres print out
+     * @param checkDist: whether or not to check the distance of the current sphere, the first loop id false and from there on it's true
+     */
     color pixel_color;
-    float dist, total;
+    double dist, total;
     int k = 0, z = 0;
     bool checkDist;
 
@@ -46,14 +53,14 @@ void World::Render(Camera &cam, const string &name) {
             dist = -1;
 
             for (int k = 0; k < this->Spheres.size(); k++) {
-                // if the photon is not going the correct direction to begin with we skip 
-                // if (Spheres[k].posX() + Spheres[k].Radius() > Photon.origin().x()) continue;
+                // if the photon is not going the correct direction to begin with we skip
                 if (Spheres[k].Hit(Photon, &dist, &checkDist)) pixel_color = Spheres[k].getColor();
             }
 
             // writing the final pixel color
             write_color(fout, pixel_color);
 
+            // printing the generating progress
             if (z >= total) {
                 k++;
                 cout << "Generating " << k << "%\n";

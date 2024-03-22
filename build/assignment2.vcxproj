@@ -310,6 +310,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Assignment2.cpp" />
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Camera.cpp" />
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\World.cpp" />
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\build\ZERO_CHECK.vcxproj">

@@ -4,6 +4,15 @@
     <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Assignment2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\World.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\Sphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\CMakeLists.txt" />

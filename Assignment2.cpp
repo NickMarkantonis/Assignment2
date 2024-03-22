@@ -206,7 +206,7 @@ int main() {
                 z++;
             }
             inp[0] + '\0';
-            sphereRadius = readFLoat(inp[0], 0, 0, true, false, false);
+            sphereRadius = readFLoat(inp[0], 0, 0, true, true, false);
 
             Sphere tmp(spherePos, sphereColor, sphereRadius);
             world.Add(tmp);

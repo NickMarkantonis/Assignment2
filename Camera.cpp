@@ -7,7 +7,7 @@
 
 using namespace std;
 
-/* defining the camera*/
+// Defining the camera
 Camera::Camera(vec3 _center, int _width, int _height) {
     center = _center;
     width = _width;
@@ -33,8 +33,8 @@ vec3 Camera::getPos() const {
 
 /* creating for each pixel a direction vector */
 vec3 Camera::pixelCenter(int y, int x) const {
-    float X = 1 - (float) 2 * x / getWidth();
-    float Y = getAspectRatio() - (float) 2 * y / getWidth();
+    double X = 1 - (float) 2 * x / getWidth();
+    double Y = getAspectRatio() - (float) 2 * y / getWidth();
 
     return vec3(X,Y,-1);
 }

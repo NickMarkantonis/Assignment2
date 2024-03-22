@@ -177,14 +177,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{770A3B19-D8E0-3880-BCC0-EC0F4DDDC217}</Project>
       <Name>assignment2</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\build\def.vcxproj">
-      <Project>{462E62BD-EB74-3E0D-8515-CCBC842EE865}</Project>
-      <Name>def</Name>
-    </ProjectReference>
-    <ProjectReference Include="C:\Users\marka\Documents\csd\2nd_semmester\Προγραμματισμός\ασκήσεις\Assignment2\build\example.vcxproj">
-      <Project>{FFEEEBE0-987E-32EF-871A-A595667DA100}</Project>
-      <Name>example</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
