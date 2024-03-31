@@ -31,10 +31,14 @@ vec3 Camera::getPos() const {
     return center;
 }
 
+float Camera::getFc() const {
+    return focalLength;
+}
+
 /* creating for each pixel a direction vector */
 vec3 Camera::pixelCenter(int y, int x) const {
     double X = 1 - (float) 2 * x / getWidth();
     double Y = getAspectRatio() - (float) 2 * y / getWidth();
 
-    return vec3(X,Y,-1);
+    return vec3(X,Y,-getFc());
 }

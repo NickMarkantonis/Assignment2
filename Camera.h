@@ -14,11 +14,13 @@ public:
     int getWidth() const;
     float getAspectRatio() const;
     vec3 getPos() const;
+    float getFc() const;
 private:
     vec3 center;
     int width;
     int height;
     float aspectRatio;
+    float focalLength = 18.0/18.0;
 };
 
 #endif

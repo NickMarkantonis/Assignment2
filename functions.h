@@ -7,8 +7,6 @@
 #include "World.h"
 #include "Camera.h"
 
-#pragma once
-
 // classes will be used for error handling
 class notInt {};
 class notFloat {};

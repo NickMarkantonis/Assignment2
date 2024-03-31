@@ -50,10 +50,11 @@ bool Sphere::Hit(ray &Ray, double *dist, bool *checkDist) const {
          * the camera and should not be rendered (return false)
          * 
          * The way to calculate said point was found from https://chat.openai.com/share/730f2226-59a1-450e-b359-781322599fdb
-         * @param t: parameter that saves how many times we have to multiple the vector in order to reach the point we want
-         *           if it is negative we know that the vector has to travel backwards so the hit point is behind the camera
+         * @param t: parameter that saves how many times we have to multiple the vector, starting from the origin of the ray 
+         * (camera), in order to reach the point we want if it is negative we know that the vector has to travel backwards
+         * so the hit point is behind the camera
         */
-        double t = inerProduct(L, Ray.direction()) / (Ray.direction().length() * Ray.direction().length());
+        double t = inerProduct(L, Ray.direction());
         if (t < 0) return false;
         
         // squaring the distance as we have to calculate it twice and we save computational resurces by that

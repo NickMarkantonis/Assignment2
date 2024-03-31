@@ -7,6 +7,7 @@
  */
 
 #include "functions.h"
+#include <chrono>
 
 using namespace std;
 
@@ -21,7 +22,10 @@ int main() {
     string userInp, imName, inp[7];
     vec3 camPos, skyColour, sphereColor, spherePos;
     float sphereRadius;
-    
+
+    // calculating the execution time:
+    auto start = chrono::high_resolution_clock::now();
+
     // making the menu
     cout << "Should the input be taken from: \n\t1) Terminal\n\t2) File\n";
     cin >> userInp;
@@ -101,6 +105,10 @@ int main() {
             Sphere tmp(spherePos, sphereColor, sphereRadius);
             world.Add(tmp);
         }
+        
+        // calculating the execution time:
+        start = chrono::high_resolution_clock::now();
+
         world.Render(cam, imName);
     } else {
         ifstream File;
@@ -211,7 +219,17 @@ int main() {
             Sphere tmp(spherePos, sphereColor, sphereRadius);
             world.Add(tmp);
         }
+        // calculating the execution time:
+        start = chrono::high_resolution_clock::now();
+        
         world.Render(cam, imName);
         File.close();
     }   
+
+    auto end = chrono::high_resolution_clock::now();
+
+    chrono::duration<double> duration = end - start;
+    cout << "Execution time: " << duration.count() << " seconds" << endl;
+
+    return 0;
 }
