@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/marka/Documents/csd/2nd_semmester/\u03a0\u03c1\u03bf\u03b3\u03c1\u03b1\u03bc\u03bc\u03b1\u03c4\u03b9\u03c3\u03bc\u03cc\u03c2/\u03b1\u03c3\u03ba\u03ae\u03c3\u03b5\u03b9\u03c2/Assignment2/build"
+			"value" : "D:/Nikolas/csd/HY-150/Assignment2/build"
 		},
 		{
 			"name" : "Assignment2_IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/marka/Documents/csd/2nd_semmester/\u03a0\u03c1\u03bf\u03b3\u03c1\u03b1\u03bc\u03bc\u03b1\u03c4\u03b9\u03c3\u03bc\u03cc\u03c2/\u03b1\u03c3\u03ba\u03ae\u03c3\u03b5\u03b9\u03c2/Assignment2"
+			"value" : "D:/Nikolas/csd/HY-150/Assignment2"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -51,7 +51,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/Hostx86/x64/lib.exe"
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/lib.exe"
 		},
 		{
 			"name" : "CMAKE_CACHEFILE_DIR",
@@ -63,7 +63,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/marka/Documents/csd/2nd_semmester/\u03a0\u03c1\u03bf\u03b3\u03c1\u03b1\u03bc\u03bc\u03b1\u03c4\u03b9\u03c3\u03bc\u03cc\u03c2/\u03b1\u03c3\u03ba\u03ae\u03c3\u03b5\u03b9\u03c2/Assignment2/build"
+			"value" : "d:/Nikolas/csd/HY-150/Assignment2/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -87,7 +87,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "28"
+			"value" : "29"
 		},
 		{
 			"name" : "CMAKE_CACHE_PATCH_VERSION",
@@ -99,7 +99,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "0"
+			"value" : "2"
 		},
 		{
 			"name" : "CMAKE_COMMAND",
@@ -111,7 +111,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe"
+			"value" : "C:/Program Files/CMake/bin/cmake.exe"
 		},
 		{
 			"name" : "CMAKE_CONFIGURATION_TYPES",
@@ -135,7 +135,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe"
+			"value" : "C:/Program Files/CMake/bin/cpack.exe"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -147,7 +147,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe"
+			"value" : "C:/Program Files/CMake/bin/ctest.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -467,7 +467,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/marka/Documents/csd/2nd_semmester/\u03a0\u03c1\u03bf\u03b3\u03c1\u03b1\u03bc\u03bc\u03b1\u03c4\u03b9\u03c3\u03bc\u03cc\u03c2/\u03b1\u03c3\u03ba\u03ae\u03c3\u03b5\u03b9\u03c2/Assignment2/build/CMakeFiles/pkgRedirects"
+			"value" : "D:/Nikolas/csd/HY-150/Assignment2/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Visual Studio 17 2022"
+			"value" : "Visual Studio 16 2019"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_INSTANCE",
@@ -491,7 +491,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community"
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools"
 		},
 		{
 			"name" : "CMAKE_GENERATOR_PLATFORM",
@@ -527,7 +527,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/marka/Documents/csd/2nd_semmester/\u03a0\u03c1\u03bf\u03b3\u03c1\u03b1\u03bc\u03bc\u03b1\u03c4\u03b9\u03c3\u03bc\u03cc\u03c2/\u03b1\u03c3\u03ba\u03ae\u03c3\u03b5\u03b9\u03c2/Assignment2"
+			"value" : "D:/Nikolas/csd/HY-150/Assignment2"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -555,7 +555,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/Hostx86/x64/link.exe"
+			"value" : "C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/link.exe"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -651,7 +651,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.22621.0/x86/mt.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mt.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -739,7 +739,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.22621.0/x86/rc.exe"
+			"value" : "C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/rc.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -843,7 +843,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28"
+			"value" : "C:/Program Files/CMake/share/cmake-3.29"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",

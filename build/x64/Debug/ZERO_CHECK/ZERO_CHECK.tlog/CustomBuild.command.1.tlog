@@ -1,6 +1,6 @@
-^C:\USERS\MARKA\DOCUMENTS\CSD\2ND_SEMMESTER\ΠΡΟΓΡΑΜΜΑΤΙΣΜΌς\ΑΣΚΉΣΕΙς\ASSIGNMENT2\BUILD\CMAKEFILES\89CB450D00F9E582DCF35FDB3B14886B\GENERATE.STAMP.RULE
+^D:\NIKOLAS\CSD\HY-150\ASSIGNMENT2\BUILD\CMAKEFILES\FE046D945D22142E1C628260CCD77B77\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/marka/Documents/csd/2nd_semmester/Προγραμματισμός/ασκήσεις/Assignment2 -BC:/Users/marka/Documents/csd/2nd_semmester/Προγραμματισμός/ασκήσεις/Assignment2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/marka/Documents/csd/2nd_semmester/Προγραμματισμός/ασκήσεις/Assignment2/build/Assignment2.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Nikolas/csd/HY-150/Assignment2 -BD:/Nikolas/csd/HY-150/Assignment2/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Nikolas/csd/HY-150/Assignment2/build/Assignment2.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

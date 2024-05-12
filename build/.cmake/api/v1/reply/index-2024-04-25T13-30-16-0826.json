@@ -4,39 +4,39 @@
 		"generator" : 
 		{
 			"multiConfig" : true,
-			"name" : "Visual Studio 17 2022",
+			"name" : "Visual Studio 16 2019",
 			"platform" : "x64"
 		},
 		"paths" : 
 		{
-			"cmake" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe",
-			"cpack" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cpack.exe",
-			"ctest" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/ctest.exe",
-			"root" : "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28"
+			"cmake" : "C:/Program Files/CMake/bin/cmake.exe",
+			"cpack" : "C:/Program Files/CMake/bin/cpack.exe",
+			"ctest" : "C:/Program Files/CMake/bin/ctest.exe",
+			"root" : "C:/Program Files/CMake/share/cmake-3.29"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 28,
-			"patch" : 0,
-			"string" : "3.28.0-msvc1",
-			"suffix" : "msvc1"
+			"minor" : 29,
+			"patch" : 2,
+			"string" : "3.29.2",
+			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-58d52523d7ebcde858ee.json",
+			"jsonFile" : "codemodel-v2-6191ad72bf77d618ab3d.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 6
+				"minor" : 7
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-264edcf2665160d17dd3.json",
+			"jsonFile" : "cache-v2-cfdd1eb9a2acba04b222.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-65c9979f01a56d48266e.json",
+			"jsonFile" : "cmakeFiles-v1-fdd921ba0d8ed49b1285.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"jsonFile" : "toolchains-v1-8e82572c774e66700502.json",
+			"jsonFile" : "toolchains-v1-fcb301cd74886971479c.json",
 			"kind" : "toolchains",
 			"version" : 
 			{
@@ -91,7 +91,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-264edcf2665160d17dd3.json",
+						"jsonFile" : "cache-v2-cfdd1eb9a2acba04b222.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -100,16 +100,16 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-58d52523d7ebcde858ee.json",
+						"jsonFile" : "codemodel-v2-6191ad72bf77d618ab3d.json",
 						"kind" : "codemodel",
 						"version" : 
 						{
 							"major" : 2,
-							"minor" : 6
+							"minor" : 7
 						}
 					},
 					{
-						"jsonFile" : "toolchains-v1-8e82572c774e66700502.json",
+						"jsonFile" : "toolchains-v1-fcb301cd74886971479c.json",
 						"kind" : "toolchains",
 						"version" : 
 						{
@@ -118,7 +118,7 @@
 						}
 					},
 					{
-						"jsonFile" : "cmakeFiles-v1-65c9979f01a56d48266e.json",
+						"jsonFile" : "cmakeFiles-v1-fdd921ba0d8ed49b1285.json",
 						"kind" : "cmakeFiles",
 						"version" : 
 						{
